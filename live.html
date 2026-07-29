@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live agora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="brand">
+    <span class="brand-eyebrow">Você está conectado</span>
+    <h1 class="brand-name">Sua Marca Aqui</h1>
+    <svg class="brand-flight" viewBox="0 0 140 36" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 32 C 40 32, 55 10, 90 8 C 110 7, 120 14, 138 4" />
+    </svg>
+  </div>
+
+  <div class="live-wrap">
+    <p class="live-greeting" id="saudacao"></p>
+
+    <div class="player-frame" id="player-frame">
+      <!--
+        SUBSTITUA o conteúdo abaixo pelo embed real do seu evento ao vivo do Vimeo.
+        No painel do Vimeo (vimeo.com/live ou o evento específico), copie o "Embed code"
+        e cole o <iframe> aqui no lugar do placeholder.
+
+        Importante: o chat ao lado do vídeo só aparece automaticamente se este for um
+        Vimeo Live Event (produto de live streaming do Vimeo), não um vídeo comum.
+      -->
+      <div class="player-placeholder">
+        Cole aqui o &lt;iframe&gt; do seu evento ao vivo do Vimeo.<br><br>
+        Exemplo: <code>&lt;iframe src="https://player.vimeo.com/video/SEU_ID_AQUI"&gt;&lt;/iframe&gt;</code>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Personaliza a saudação com o nome informado no cadastro, se disponível.
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var nome = params.get('nome') || localStorage.getItem('inscricao_nome');
+      var saudacao = document.getElementById('saudacao');
+      if (nome) {
+        saudacao.innerHTML = 'Bem-vindo(a), <strong>' + nome.split(' ')[0] + '</strong>! A transmissão vai começar.';
+      } else {
+        saudacao.textContent = '';
+      }
+    })();
+  </script>
+</body>
+</html>

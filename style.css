@@ -1,0 +1,253 @@
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root{
+  --bg: #0b0b0d;
+  --bg-elevated: #16141a;
+  --bg-elevated-2: #1d1a20;
+  --gold: #c9a15a;
+  --gold-bright: #e8c688;
+  --text: #f2ede3;
+  --text-muted: #9a9490;
+  --border: rgba(201,161,90,0.22);
+  --error: #d97b6c;
+  --success: #7fae87;
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+body{
+  background-image:
+    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201,161,90,0.10), transparent 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 6vh 20px 8vh;
+}
+
+a{ color: var(--gold); }
+
+/* ============================================================
+   Brand mark
+   ============================================================ */
+.brand{
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.brand-eyebrow{
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.brand-name{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.06em;
+  color: var(--gold-bright);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* signature element: an ascending path that draws itself in on load */
+.brand-flight{
+  width: 140px;
+  height: 36px;
+  margin: 1rem auto 0;
+  display: block;
+}
+.brand-flight path{
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: draw-flight 1.6s ease-out 0.2s forwards;
+}
+@media (prefers-reduced-motion: reduce){
+  .brand-flight path{ animation: none; stroke-dashoffset: 0; }
+}
+@keyframes draw-flight{
+  to{ stroke-dashoffset: 0; }
+}
+
+/* ============================================================
+   Card
+   ============================================================ */
+.card{
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2.6rem 2.2rem;
+}
+
+.card-title{
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.4rem;
+  color: var(--text);
+}
+
+.card-subtitle{
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 2rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Form
+   ============================================================ */
+.field{
+  margin-bottom: 1.4rem;
+}
+
+.field label{
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.field input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.5rem 0.1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus{
+  border-bottom-color: var(--gold);
+}
+
+.field input.invalid{
+  border-bottom-color: var(--error);
+}
+
+.field-error{
+  color: var(--error);
+  font-size: 0.76rem;
+  margin-top: 0.4rem;
+  min-height: 1em;
+}
+
+.btn-submit{
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-top: 0.6rem;
+  background: var(--gold);
+  color: #14110a;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover:not(:disabled){ background: var(--gold-bright); }
+.btn-submit:active:not(:disabled){ transform: scale(0.99); }
+.btn-submit:disabled{ opacity: 0.6; cursor: default; }
+
+.form-note{
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin-top: 1.4rem;
+}
+
+.form-status{
+  text-align: center;
+  font-size: 0.82rem;
+  min-height: 1.2em;
+  margin-top: 1rem;
+}
+.form-status.error{ color: var(--error); }
+.form-status.success{ color: var(--success); }
+
+/* ============================================================
+   Live page
+   ============================================================ */
+.live-wrap{
+  width: 100%;
+  max-width: 980px;
+}
+
+.live-greeting{
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: -1.6rem 0 2rem;
+}
+.live-greeting strong{ color: var(--gold-bright); font-weight: 600; }
+
+.player-frame{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.player-frame iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.player-placeholder{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.6;
+}
+.player-placeholder code{
+  color: var(--gold);
+  background: rgba(201,161,90,0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+}
+
+@media (max-width: 560px){
+  .card{ padding: 2rem 1.4rem; }
+}

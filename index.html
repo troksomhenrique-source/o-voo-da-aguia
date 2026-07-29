@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição — Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="brand">
+    <span class="brand-eyebrow">Transmissão ao vivo</span>
+    <h1 class="brand-name">Sua Marca Aqui</h1>
+    <svg class="brand-flight" viewBox="0 0 140 36" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 32 C 40 32, 55 10, 90 8 C 110 7, 120 14, 138 4" />
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2 class="card-title">Faça sua inscrição</h2>
+    <p class="card-subtitle">Preencha os dados abaixo para garantir sua vaga na live.</p>
+
+    <form id="form-inscricao" novalidate>
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" autocomplete="name" required>
+        <div class="field-error" id="erro-nome"></div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <div class="field-error" id="erro-email"></div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="btn-enviar">Confirmar inscrição</button>
+
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
+      <p class="form-note">
+        Ao se inscrever você concorda em receber comunicações sobre este evento.
+      </p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
