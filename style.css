@@ -70,7 +70,7 @@ a{ color: var(--gold); }
 
 /* signature element: the emblem, fading and settling into place on load */
 .brand-logo{
-  width: 80px;
+  width: 120px;
   height: auto;
   display: block;
   margin: 0 auto 1.1rem;
