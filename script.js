@@ -4,7 +4,7 @@
 // para o passo a passo de como gerar essa URL a partir de uma planilha
 // do Google Sheets).
 // =====================================================================
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPJaJ5Dd7OZqt8l67HZ2ZQmvmnj01lHyHTbItTr4oOTQyqKmR0aBVOOJxg_BOHbLs/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPJaJ5Dd7OZqt8l67HZ2ZQmvmnj01lHyHTbItTr4oOTQyqKmR0aBVOOJxg_BOHbLs/exec"
 
 const form = document.getElementById('form-inscricao');
 const btn = document.getElementById('btn-enviar');
